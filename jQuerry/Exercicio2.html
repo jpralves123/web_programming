@@ -19,7 +19,7 @@
             })
 
             $("#list").delegate('li a','click', function(){
-                $("li").empty();
+                $(this).parent().remove();
             });
 
         })
