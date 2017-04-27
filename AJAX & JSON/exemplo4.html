@@ -1,0 +1,23 @@
+<input type="text" id="adress" />
+<button id="add-button">pesquisa</button>
+<p id="result">
+</p>
+<script        src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js">
+</script>
+
+
+
+$(document).ready(function () {
+  $("#add-button").click(function () {
+  	var value = $("#adress").val();
+    var url = "https://maps.googleapis.com/maps/api/geocode/json?address="+value;
+    console.log(url);
+
+    $.getJSON(url, function(result){
+    		console.log(result)
+				var loc =  result.results[0].geometry.location;
+				var res = "Location:" + loc.lat +","+loc.lng;
+        $("#result").html(result.results[0].formatted_address+"<br>" + res );
+    });
+	});
+})
