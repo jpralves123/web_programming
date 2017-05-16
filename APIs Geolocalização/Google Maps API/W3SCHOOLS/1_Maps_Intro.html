@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <body>
+
+      <h1>EXEMPLO 1 - API Google maps</h1>
+
+      <div id="googleMap" style="width:100%;height:400px;"></div>
+
+      <script>
+          function myMap() {
+          var mapProp= {
+                                          //Coordenadas UNIFEI
+              center:new google.maps.LatLng(-22.413769,-45.449411),zoom:10,
+          };
+          var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+          }
+      </script>
+
+      <!--Faz a ligação com a API usando a KEY -->
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRe5WHr0ymZ7ocRRR2FjZZvZ_QiexKTSg&callback=myMap"></script>
+
+  </body>
+</html>
